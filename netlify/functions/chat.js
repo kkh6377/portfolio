@@ -1,12 +1,25 @@
-const portfolioInfo = `
+exports.handler = async function (event) {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ answer: "Method Not Allowed" })
+    };
+  }
+
+  try {
+    const { message } = JSON.parse(event.body || "{}");
+
+    if (!message) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ answer: "질문이 비어 있습니다." })
+      };
+    }
+
+    const portfolioInfo = `
 이름: Gyeong Han / 곽경한
 직무/소개: 몰입형 디지털 경험을 만드는 데 관심이 있는 대학생 개발자입니다.
 관심 분야: 게임 개발, VR/XR 시뮬레이션, Unreal Engine, Unity, Roblox, 3D/인터랙티브 콘텐츠, 웹 포트폴리오 제작
-
-소개:
-- C#과 Python 기반의 프로그래밍 역량을 갖추고 있습니다.
-- 창의적인 디자인과 기술 개발이 만나는 지점에서 프로젝트를 만드는 것을 좋아합니다.
-- 디자인은 단순한 예술이 아니라 문제를 해결하고 사람들의 경험을 더 쉽게 만드는 도구라고 생각합니다.
 
 기술 스택:
 - Unreal Engine 5
@@ -24,61 +37,93 @@ const portfolioInfo = `
 - Gemini API 기반 AI 챗봇
 
 대표 프로젝트:
-
 1. EscapeRoom: Desert & Space Theme Project
 - Unreal Engine 5 기반 퍼즐 어드벤처/방탈출 프로젝트입니다.
 - 사막 고대 사원과 미래형 우주 정거장이라는 두 가지 테마의 공간을 구현했습니다.
 - Blueprints, 라인트레이스/레이캐스팅 기반 상호작용, 모듈형 퍼즐 시스템, 레벨 디자인, 동적 조명, 파티클 효과를 활용했습니다.
-- 목표는 퍼즐 난이도와 몰입감 있는 환경 연출을 함께 구현하는 것이었습니다.
 - 기간: 2025년 9월 2일 ~ 2025년 12월 18일, 약 15주
 
 2. VR Drive Simulator: Case Study Content
 - Unity 기반 VR 운전면허 시험 시뮬레이터입니다.
 - 실제 운전 연습 전 안전한 가상 환경에서 차량 조작과 교통 규칙을 연습할 수 있도록 설계했습니다.
 - Unity XR Interaction Toolkit, 차량 물리, 조향/마찰/관성 처리, 실시간 교통 위반 판정 시스템을 구현했습니다.
-- 속도 제한, 차선 이탈, 신호 준수 등을 센서 트리거로 감지하는 자동 채점 로직을 포함합니다.
-- 목표는 VR 멀미를 줄이면서 현실감 있는 운전 경험을 제공하는 것이었습니다.
 - 기간: 2025년 10월 18일 ~ 2025년 12월 17일, 약 16주
 
 3. HI-five: Idol Music Video Production
 - Unreal Engine 5로 제작한 가상 아이돌 뮤직비디오 프로젝트입니다.
 - Sequencer, 모션 캡처 애니메이션, 실시간 레이 트레이싱, 무대 조명 연출을 활용했습니다.
-- Control Rig를 조정해 캐릭터 동작과 표정을 자연스럽게 만들고, 카메라 컷을 음악의 리듬에 맞춰 구성했습니다.
-- 목표는 실제 아이돌 무대처럼 보이는 고품질 실시간 영상 연출을 구현하는 것이었습니다.
-- 핵심 역량: 디지털 디렉팅, 퍼포먼스 애니메이션, 실시간 시네마틱 제작
+- Control Rig와 카메라 컷을 조정해 음악 리듬에 맞는 실시간 시네마틱을 구성했습니다.
 
 4. Project: Powerful Shooting
 - Roblox 기반 멀티플레이어 좀비 서바이벌 슈팅 게임입니다.
-- 플레이어가 몰려오는 좀비 웨이브를 버티는 구조이며, 수류탄과 섬광탄 같은 전술 장비를 포함합니다.
+- 수류탄과 섬광탄 같은 전술 장비를 포함합니다.
 - 5스테이지마다 보스 라운드가 등장하는 라운드 기반 난이도 상승 시스템을 구현했습니다.
 - Roblox Studio의 Luau 스크립팅으로 체력, 무기 데미지, 좀비 AI, 멀티플레이어 동기화 로직을 구성했습니다.
-- 목표는 단순한 슈팅이 아니라 팀 전략과 긴장감이 있는 생존 게임 경험을 만드는 것이었습니다.
 
-포트폴리오 페이지 구성:
-- Home: 대표 프로젝트, 사용 기술, 작업 방식, FAQ를 보여주는 메인 페이지
-- Work: 프로젝트 목록 페이지
-- About: 자기소개, 개발/디자인 철학, Blender Gallery 소개
-- Contact: 이름, 이메일, 메시지를 입력해 연락할 수 있는 문의 페이지
-
-작업 방식:
-1. Discovery: 목표와 문제를 이해합니다.
-2. Research: 산업, 경쟁 요소, 사용자를 분석합니다.
-3. Strategy: 목표 달성을 위한 전략을 세웁니다.
-4. Content: 사용자에게 필요한 정보를 정리합니다.
-5. Copywriting: 메시지를 명확한 문장으로 다듬습니다.
-6. Design: 이미지, 색상, 폰트로 메시지를 강화합니다.
-7. Development: 반응형 웹사이트와 인터랙션을 구현합니다.
-8. Handover: 사용자가 직접 수정할 수 있도록 안내합니다.
-9. Support: 출시 후 문제 해결과 개선을 지원합니다.
+페이지 구성:
+- Home: 대표 프로젝트, 사용 기술, 작업 방식, FAQ
+- Work: 프로젝트 목록 및 상세 페이지
+- About: 자기소개, 개발/디자인 철학, Blender Gallery
+- Contact: 이름, 이메일, 메시지를 입력하는 문의 페이지
 
 연락 방법:
 - Contact 페이지에서 이름, 이메일, 메시지를 입력해 문의할 수 있습니다.
 - 사이트에는 Book a Call, Send a Text 버튼이 있습니다.
 - 소셜 링크: GitHub, Instagram, YouTube, Google Meet
-
-AI 답변 규칙:
-- 위 포트폴리오 정보에 있는 내용만 바탕으로 답변합니다.
-- 없는 정보는 추측하지 말고 "포트폴리오에 없는 정보입니다."라고 답합니다.
-- 답변은 한국어로 짧고 명확하게 합니다.
-- 프로젝트 질문에는 관련 프로젝트 이름과 사용 기술을 함께 말합니다.
 `;
+
+    const prompt = `
+너는 곽경한의 포트폴리오 웹사이트에 탑재된 AI 비서다.
+아래 포트폴리오 정보만 바탕으로 한국어로 답변한다.
+정보에 없는 내용은 추측하지 말고 "포트폴리오에 없는 정보입니다."라고 답한다.
+답변은 짧고 명확하게 작성한다.
+
+[포트폴리오 정보]
+${portfolioInfo}
+
+[사용자 질문]
+${message}
+`;
+
+    const response = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": process.env.GEMINI_API_KEY
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [{ text: prompt }]
+            }
+          ],
+          generationConfig: {
+            temperature: 0.3,
+            maxOutputTokens: 500
+          }
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    const answer =
+      data.candidates?.[0]?.content?.parts?.[0]?.text ||
+      data.error?.message ||
+      "답변을 생성하지 못했습니다.";
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ answer })
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        answer: "서버에서 문제가 발생했습니다."
+      })
+    };
+  }
+};
