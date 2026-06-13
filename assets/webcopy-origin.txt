@@ -1,0 +1,556 @@
+Uri: https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwcGFU.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\s\geist\v5\gyByhwUxId8gMEwcGFU.woff2
+Content Type: font/woff2
+
+Uri: https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwRGFWfOw.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\s\geist\v5\gyByhwUxId8gMEwRGFWfOw.woff2
+Content Type: font/woff2
+
+Uri: https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwSGFWfOw.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\s\geist\v5\gyByhwUxId8gMEwSGFWfOw.woff2
+Content Type: font/woff2
+
+Uri: https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwTGFWfOw.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\s\geist\v5\gyByhwUxId8gMEwTGFWfOw.woff2
+Content Type: font/woff2
+
+Uri: https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwYGFWfOw.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\s\geist\v5\gyByhwUxId8gMEwYGFWfOw.woff2
+Content Type: font/woff2
+
+Uri: https://framerusercontent.com/assets/5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\assets\5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2
+Content Type: font/woff2
+
+Uri: https://framerusercontent.com/assets/b6Y37FthZeALduNqHicBT6FutY.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\assets\b6Y37FthZeALduNqHicBT6FutY.woff2
+Content Type: font/woff2
+
+Uri: https://framerusercontent.com/assets/EOr0mi4hNtlgWNn9if640EZzXCo.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\assets\EOr0mi4hNtlgWNn9if640EZzXCo.woff2
+Content Type: font/woff2
+
+Uri: https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\assets\GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2
+Content Type: font/woff2
+
+Uri: https://framerusercontent.com/assets/JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\assets\JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2
+Content Type: font/woff2
+
+Uri: https://framerusercontent.com/assets/OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\assets\OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2
+Content Type: font/woff2
+
+Uri: https://framerusercontent.com/assets/vQyevYAyHtARFwPqUzQGpnDs.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\assets\vQyevYAyHtARFwPqUzQGpnDs.woff2
+Content Type: font/woff2
+
+Uri: https://framerusercontent.com/assets/Y9k9QrlZAqio88Klkmbd8VoMQc.woff2
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\assets\Y9k9QrlZAqio88Klkmbd8VoMQc.woff2
+Content Type: font/woff2
+
+Uri: https://framerusercontent.com/images/0cSZPrZ0SmjzR0nMrQ3KOXBneo.png?scale-down-to=1024&width=2872&height=1638
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\0cSZPrZ0SmjzR0nMrQ3KOXBneo-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/0cSZPrZ0SmjzR0nMrQ3KOXBneo.png?scale-down-to=2048&width=2872&height=1638
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\0cSZPrZ0SmjzR0nMrQ3KOXBneo-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/0cSZPrZ0SmjzR0nMrQ3KOXBneo.png?scale-down-to=512&width=2872&height=1638
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\0cSZPrZ0SmjzR0nMrQ3KOXBneo-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/0cSZPrZ0SmjzR0nMrQ3KOXBneo.png?width=2872&height=1638
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\0cSZPrZ0SmjzR0nMrQ3KOXBneo.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/1i2JBmF3ATmr2Nbn2JK3qcf8tyg.png?scale-down-to=1024&width=1742&height=1258
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\1i2JBmF3ATmr2Nbn2JK3qcf8tyg-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/1i2JBmF3ATmr2Nbn2JK3qcf8tyg.png?scale-down-to=512&width=1742&height=1258
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\1i2JBmF3ATmr2Nbn2JK3qcf8tyg-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/1i2JBmF3ATmr2Nbn2JK3qcf8tyg.png?width=1742&height=1258
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\1i2JBmF3ATmr2Nbn2JK3qcf8tyg.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/5pDV2ohRcbQV9Q2bIf3D4008Bw.png
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\5pDV2ohRcbQV9Q2bIf3D4008Bw.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/7qVaP0BFsbjfC7e9rMki7xgTLM.png?scale-down-to=1024&width=1756&height=1132
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\7qVaP0BFsbjfC7e9rMki7xgTLM-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/7qVaP0BFsbjfC7e9rMki7xgTLM.png?scale-down-to=512&width=1756&height=1132
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\7qVaP0BFsbjfC7e9rMki7xgTLM-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/7qVaP0BFsbjfC7e9rMki7xgTLM.png?width=1756&height=1132
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\7qVaP0BFsbjfC7e9rMki7xgTLM.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/7tFglLSjd7GnLJ9LxDHWG7sw4.png?scale-down-to=1024&width=1768&height=1140
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\7tFglLSjd7GnLJ9LxDHWG7sw4-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/7tFglLSjd7GnLJ9LxDHWG7sw4.png?scale-down-to=512&width=1768&height=1140
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\7tFglLSjd7GnLJ9LxDHWG7sw4-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/7tFglLSjd7GnLJ9LxDHWG7sw4.png?width=1768&height=1140
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\7tFglLSjd7GnLJ9LxDHWG7sw4.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/A0xWudZVQCemDx01mQwUSjLeSwk.png?scale-down-to=1024&width=2856&height=1430
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\A0xWudZVQCemDx01mQwUSjLeSwk-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/A0xWudZVQCemDx01mQwUSjLeSwk.png?scale-down-to=2048&width=2856&height=1430
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\A0xWudZVQCemDx01mQwUSjLeSwk-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/A0xWudZVQCemDx01mQwUSjLeSwk.png?scale-down-to=512&width=2856&height=1430
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\A0xWudZVQCemDx01mQwUSjLeSwk-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/A0xWudZVQCemDx01mQwUSjLeSwk.png?width=2856&height=1430
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\A0xWudZVQCemDx01mQwUSjLeSwk.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/af7BnkqKLNbIQLOSddCHMGw18.png?scale-down-to=1024&width=2130&height=1198
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\af7BnkqKLNbIQLOSddCHMGw18-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/af7BnkqKLNbIQLOSddCHMGw18.png?scale-down-to=2048&width=2130&height=1198
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\af7BnkqKLNbIQLOSddCHMGw18-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/af7BnkqKLNbIQLOSddCHMGw18.png?scale-down-to=512&width=2130&height=1198
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\af7BnkqKLNbIQLOSddCHMGw18-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/af7BnkqKLNbIQLOSddCHMGw18.png?width=2130&height=1198
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\af7BnkqKLNbIQLOSddCHMGw18.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/aIxJhrWi7LReyOEAsW2SC4dbo.png?scale-down-to=1024&width=1768&height=896
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\aIxJhrWi7LReyOEAsW2SC4dbo-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/aIxJhrWi7LReyOEAsW2SC4dbo.png?scale-down-to=512&width=1768&height=896
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\aIxJhrWi7LReyOEAsW2SC4dbo-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/aIxJhrWi7LReyOEAsW2SC4dbo.png?width=1768&height=896
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\aIxJhrWi7LReyOEAsW2SC4dbo.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/azUaqZkjIvuUmsX9UnyrOmd8q8.png
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\azUaqZkjIvuUmsX9UnyrOmd8q8.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/Boh6cBmUN38YXchj0JONuaKKYY.png?scale-down-to=1024&width=2862&height=1616
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\Boh6cBmUN38YXchj0JONuaKKYY-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/Boh6cBmUN38YXchj0JONuaKKYY.png?scale-down-to=2048&width=2862&height=1616
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\Boh6cBmUN38YXchj0JONuaKKYY-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/Boh6cBmUN38YXchj0JONuaKKYY.png?scale-down-to=512&width=2862&height=1616
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\Boh6cBmUN38YXchj0JONuaKKYY-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/Boh6cBmUN38YXchj0JONuaKKYY.png?width=2862&height=1616
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\Boh6cBmUN38YXchj0JONuaKKYY.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/clhBPbE2B7tvRefzIjVfF96j4M.png?scale-down-to=1024&width=2030&height=988
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\clhBPbE2B7tvRefzIjVfF96j4M-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/clhBPbE2B7tvRefzIjVfF96j4M.png?scale-down-to=512&width=2030&height=988
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\clhBPbE2B7tvRefzIjVfF96j4M-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/clhBPbE2B7tvRefzIjVfF96j4M.png?width=2030&height=988
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\clhBPbE2B7tvRefzIjVfF96j4M.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/CrTCw5LUdu9A9ajPHRG44acIPs.png?scale-down-to=1024&width=2880&height=1540
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\CrTCw5LUdu9A9ajPHRG44acIPs-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/CrTCw5LUdu9A9ajPHRG44acIPs.png?scale-down-to=2048&width=2880&height=1540
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\CrTCw5LUdu9A9ajPHRG44acIPs-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/CrTCw5LUdu9A9ajPHRG44acIPs.png?scale-down-to=512&width=2880&height=1540
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\CrTCw5LUdu9A9ajPHRG44acIPs-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/CrTCw5LUdu9A9ajPHRG44acIPs.png?width=2880&height=1540
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\CrTCw5LUdu9A9ajPHRG44acIPs.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/Dp5z71kZCrfAZkmoi9Ojeb09e9U.png?scale-down-to=1024&width=1736&height=1282
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\Dp5z71kZCrfAZkmoi9Ojeb09e9U-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/Dp5z71kZCrfAZkmoi9Ojeb09e9U.png?scale-down-to=512&width=1736&height=1282
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\Dp5z71kZCrfAZkmoi9Ojeb09e9U-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/Dp5z71kZCrfAZkmoi9Ojeb09e9U.png?width=1736&height=1282
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\Dp5z71kZCrfAZkmoi9Ojeb09e9U.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/ff8yFay9GoXl5rXXsL17NT9IotU.png?scale-down-to=1024&width=1762&height=1132
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\ff8yFay9GoXl5rXXsL17NT9IotU-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/ff8yFay9GoXl5rXXsL17NT9IotU.png?scale-down-to=512&width=1762&height=1132
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\ff8yFay9GoXl5rXXsL17NT9IotU-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/ff8yFay9GoXl5rXXsL17NT9IotU.png?width=1762&height=1132
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\ff8yFay9GoXl5rXXsL17NT9IotU.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/gO55kUrxqphrDCccCtmPOUYdSTM.png?scale-down-to=1024&width=2138&height=1170
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\gO55kUrxqphrDCccCtmPOUYdSTM-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/gO55kUrxqphrDCccCtmPOUYdSTM.png?scale-down-to=2048&width=2138&height=1170
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\gO55kUrxqphrDCccCtmPOUYdSTM-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/gO55kUrxqphrDCccCtmPOUYdSTM.png?scale-down-to=512&width=2138&height=1170
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\gO55kUrxqphrDCccCtmPOUYdSTM-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/gO55kUrxqphrDCccCtmPOUYdSTM.png?width=2138&height=1170
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\gO55kUrxqphrDCccCtmPOUYdSTM.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/ij4MIfDrxGS4QvQh4eS4RXuOpE.png?scale-down-to=1024&width=2032&height=1114
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\ij4MIfDrxGS4QvQh4eS4RXuOpE-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/ij4MIfDrxGS4QvQh4eS4RXuOpE.png?scale-down-to=512&width=2032&height=1114
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\ij4MIfDrxGS4QvQh4eS4RXuOpE-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/ij4MIfDrxGS4QvQh4eS4RXuOpE.png?width=2032&height=1114
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\ij4MIfDrxGS4QvQh4eS4RXuOpE.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/IwA412EfJ7WlvSxnrEYjKMXrk.png?scale-down-to=1024&width=2386&height=1146
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\IwA412EfJ7WlvSxnrEYjKMXrk-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/IwA412EfJ7WlvSxnrEYjKMXrk.png?scale-down-to=2048&width=2386&height=1146
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\IwA412EfJ7WlvSxnrEYjKMXrk-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/IwA412EfJ7WlvSxnrEYjKMXrk.png?scale-down-to=512&width=2386&height=1146
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\IwA412EfJ7WlvSxnrEYjKMXrk-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/IwA412EfJ7WlvSxnrEYjKMXrk.png?width=2386&height=1146
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\IwA412EfJ7WlvSxnrEYjKMXrk.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/LmQtL5iLvAKSHyt5xFgJtjn4EO4.png?scale-down-to=1024&width=2846&height=1398
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\LmQtL5iLvAKSHyt5xFgJtjn4EO4-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/LmQtL5iLvAKSHyt5xFgJtjn4EO4.png?scale-down-to=2048&width=2846&height=1398
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\LmQtL5iLvAKSHyt5xFgJtjn4EO4-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/LmQtL5iLvAKSHyt5xFgJtjn4EO4.png?scale-down-to=512&width=2846&height=1398
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\LmQtL5iLvAKSHyt5xFgJtjn4EO4-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/LmQtL5iLvAKSHyt5xFgJtjn4EO4.png?width=2846&height=1398
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\LmQtL5iLvAKSHyt5xFgJtjn4EO4.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/nAOPUC2tkfXIOKuwSvCHpUy8cLM.png?width=386&height=520
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\nAOPUC2tkfXIOKuwSvCHpUy8cLM.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/nVznE1rsErIMntAD29bMA5JuXXY.png?scale-down-to=1024&width=1920&height=1070
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\nVznE1rsErIMntAD29bMA5JuXXY-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/nVznE1rsErIMntAD29bMA5JuXXY.png?scale-down-to=512&width=1920&height=1070
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\nVznE1rsErIMntAD29bMA5JuXXY-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/nVznE1rsErIMntAD29bMA5JuXXY.png?width=1920&height=1070
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\nVznE1rsErIMntAD29bMA5JuXXY.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/OEjTBvJz6MRpr2NohHYiLJiJyU.png?scale-down-to=1024&width=2856&height=1428
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\OEjTBvJz6MRpr2NohHYiLJiJyU-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/OEjTBvJz6MRpr2NohHYiLJiJyU.png?scale-down-to=2048&width=2856&height=1428
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\OEjTBvJz6MRpr2NohHYiLJiJyU-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/OEjTBvJz6MRpr2NohHYiLJiJyU.png?scale-down-to=512&width=2856&height=1428
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\OEjTBvJz6MRpr2NohHYiLJiJyU-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/OEjTBvJz6MRpr2NohHYiLJiJyU.png?width=2856&height=1428
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\OEjTBvJz6MRpr2NohHYiLJiJyU.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/PcNOM0r2qw8jbMsu9XRSQ50wAOI.png?scale-down-to=1024&width=1122&height=1006
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\PcNOM0r2qw8jbMsu9XRSQ50wAOI-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/PcNOM0r2qw8jbMsu9XRSQ50wAOI.png?scale-down-to=512&width=1122&height=1006
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\PcNOM0r2qw8jbMsu9XRSQ50wAOI-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/PcNOM0r2qw8jbMsu9XRSQ50wAOI.png?width=1122&height=1006
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\PcNOM0r2qw8jbMsu9XRSQ50wAOI.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/pKXfuLBz5R4Qt2gYQS7CeTdnGzI.png
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\pKXfuLBz5R4Qt2gYQS7CeTdnGzI.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/ptAbinqNSNE5WllkQLD7QvQ10Vk.png?scale-down-to=1024&width=1924&height=1066
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\ptAbinqNSNE5WllkQLD7QvQ10Vk-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/ptAbinqNSNE5WllkQLD7QvQ10Vk.png?scale-down-to=512&width=1924&height=1066
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\ptAbinqNSNE5WllkQLD7QvQ10Vk-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/ptAbinqNSNE5WllkQLD7QvQ10Vk.png?width=1924&height=1066
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\ptAbinqNSNE5WllkQLD7QvQ10Vk.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/QQtKLYUoCZUI9Pk1XRGifM0Jv0.png?scale-down-to=1024&width=2034&height=1132
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\QQtKLYUoCZUI9Pk1XRGifM0Jv0-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/QQtKLYUoCZUI9Pk1XRGifM0Jv0.png?scale-down-to=512&width=2034&height=1132
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\QQtKLYUoCZUI9Pk1XRGifM0Jv0-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/QQtKLYUoCZUI9Pk1XRGifM0Jv0.png?width=2034&height=1132
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\QQtKLYUoCZUI9Pk1XRGifM0Jv0.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/sJ3MbOQ6SJ1fuQF6Saj3pjetfk.png?scale-down-to=1024&width=2874&height=1446
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\sJ3MbOQ6SJ1fuQF6Saj3pjetfk-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/sJ3MbOQ6SJ1fuQF6Saj3pjetfk.png?scale-down-to=2048&width=2874&height=1446
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\sJ3MbOQ6SJ1fuQF6Saj3pjetfk-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/sJ3MbOQ6SJ1fuQF6Saj3pjetfk.png?scale-down-to=512&width=2874&height=1446
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\sJ3MbOQ6SJ1fuQF6Saj3pjetfk-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/sJ3MbOQ6SJ1fuQF6Saj3pjetfk.png?width=2874&height=1446
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\sJ3MbOQ6SJ1fuQF6Saj3pjetfk.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/TxYOVxmBfCeILZTeP19rAAmS60.png?scale-down-to=1024&width=2880&height=1636
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\TxYOVxmBfCeILZTeP19rAAmS60-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/TxYOVxmBfCeILZTeP19rAAmS60.png?scale-down-to=2048&width=2880&height=1636
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\TxYOVxmBfCeILZTeP19rAAmS60-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/TxYOVxmBfCeILZTeP19rAAmS60.png?scale-down-to=512&width=2880&height=1636
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\TxYOVxmBfCeILZTeP19rAAmS60-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/TxYOVxmBfCeILZTeP19rAAmS60.png?width=2880&height=1636
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\TxYOVxmBfCeILZTeP19rAAmS60.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/u55FQCHQYyOjyiHr7rYpXZdNw.png?scale-down-to=1024&width=1394&height=1430
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\u55FQCHQYyOjyiHr7rYpXZdNw-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/u55FQCHQYyOjyiHr7rYpXZdNw.png?width=1394&height=1430
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\u55FQCHQYyOjyiHr7rYpXZdNw.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/WpuCv7wTTnCp5o8dIh0ly1JCM.png?scale-down-to=1024&width=1270&height=944
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\WpuCv7wTTnCp5o8dIh0ly1JCM-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/WpuCv7wTTnCp5o8dIh0ly1JCM.png?scale-down-to=512&width=1270&height=944
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\WpuCv7wTTnCp5o8dIh0ly1JCM-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/WpuCv7wTTnCp5o8dIh0ly1JCM.png?width=1270&height=944
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\WpuCv7wTTnCp5o8dIh0ly1JCM.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/XXC3cyuncG9MisDJEY4OWWqTJE.png?scale-down-to=1024&width=1522&height=712
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\XXC3cyuncG9MisDJEY4OWWqTJE-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/XXC3cyuncG9MisDJEY4OWWqTJE.png?scale-down-to=512&width=1522&height=712
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\XXC3cyuncG9MisDJEY4OWWqTJE-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/XXC3cyuncG9MisDJEY4OWWqTJE.png?width=1522&height=712
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\XXC3cyuncG9MisDJEY4OWWqTJE.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/y1W1md33CZl2zmRkN5VNSRIME.png?scale-down-to=1024&width=2454&height=1178
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\y1W1md33CZl2zmRkN5VNSRIME-2.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/y1W1md33CZl2zmRkN5VNSRIME.png?scale-down-to=2048&width=2454&height=1178
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\y1W1md33CZl2zmRkN5VNSRIME-3.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/y1W1md33CZl2zmRkN5VNSRIME.png?scale-down-to=512&width=2454&height=1178
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\y1W1md33CZl2zmRkN5VNSRIME-1.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/images/y1W1md33CZl2zmRkN5VNSRIME.png?width=2454&height=1178
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\images\y1W1md33CZl2zmRkN5VNSRIME.png
+Content Type: image/png
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/9dDKHZdI9dmhXNFXmVnB6cx19Y4VhsHnpUxRipudB3Q.DgiEZ4NO.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\9dDKHZdI9dmhXNFXmVnB6cx19Y4VhsHnpUxRipudB3Q.DgiEZ4NO.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/augiA20Il.DrhqrpoZ.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\augiA20Il.DrhqrpoZ.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/Ax6UPpI0OzflPrs7v9Sghdm-J9uSpLyOPcsnMsnujuE.iukI6WMI.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\Ax6UPpI0OzflPrs7v9Sghdm-J9uSpLyOPcsnMsnujuE.iukI6WMI.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/bjm31Bu2FGjEj0sLV4XjbYUV9VDLwAK6CHhlW0NGvJ8.vX6Y5m0H.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\bjm31Bu2FGjEj0sLV4XjbYUV9VDLwAK6CHhlW0NGvJ8.vX6Y5m0H.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/BSzrOPrdXBZ_WbqQk86bP6FV7jBC7o0uef2_pvRAVzU.DPp7bNx1.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\BSzrOPrdXBZ_WbqQk86bP6FV7jBC7o0uef2_pvRAVzU.DPp7bNx1.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/framer.Dx8WPBEw.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\framer.Dx8WPBEw.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/fumCMkYPW.Bnt92CB1.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\fumCMkYPW.Bnt92CB1.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/hy9nn8hso.DYmZK6Of.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\hy9nn8hso.DYmZK6Of.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/jAYAXm57L.CplrJ_Ud.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\jAYAXm57L.CplrJ_Ud.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/KnK4dBmFu.BMMlF5k3.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\KnK4dBmFu.BMMlF5k3.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/motion.ogRZA0Vf.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\motion.ogRZA0Vf.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/oHb_y0Ig5ZYxEMVaEJwBbZZn_vxgWaFddld1b2V7f-o.D0TM0Hdi.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\oHb_y0Ig5ZYxEMVaEJwBbZZn_vxgWaFddld1b2V7f-o.D0TM0Hdi.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/react.D85NUmPh.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\react.D85NUmPh.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/rolldown-runtime.CawJvvTp.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\rolldown-runtime.CawJvvTp.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/script_main.cy5wteoj.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\script_main.cy5wteoj.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/shared-lib.4gNTOXul.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\shared-lib.4gNTOXul.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/UnWLAv53v.CzLThaJN.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\UnWLAv53v.CzLThaJN.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/wDM997alT.DmpjyKed.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\wDM997alT.DmpjyKed.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/wf9nHru7E.FXMCGsta.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\wf9nHru7E.FXMCGsta.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/XgO21yGz2.DCyyr50U.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\XgO21yGz2.DCyyr50U.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/xPoGTQnpO.DpVxQI3Y.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\xPoGTQnpO.DpVxQI3Y.mjs
+Content Type: text/javascript
+
+Uri: https://framerusercontent.com/sites/7303lL7H7bTEgD7SDKbRpP/YWljWh96d.BN6Rz6d-.mjs
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\sites\7303lL7H7bTEgD7SDKbRpP\YWljWh96d.BN6Rz6d-.mjs
+Content Type: text/javascript
+
+Uri: https://rudgks.framer.website/
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\index.htm
+Content Type: text/html
+
+Uri: https://rudgks.framer.website/about
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\about.html
+Content Type: text/html
+
+Uri: https://rudgks.framer.website/contact
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\contact.html
+Content Type: text/html
+
+Uri: https://rudgks.framer.website/work
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\work.html
+Content Type: text/html
+
+Uri: https://rudgks.framer.website/work/escaperoom-desert-space-theme-project
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\work\escaperoom-desert-space-theme-project.html
+Content Type: text/html
+
+Uri: https://rudgks.framer.website/work/nothing
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\work\nothing.html
+Content Type: text/html
+
+Uri: https://rudgks.framer.website/work/rivian
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\work\rivian.html
+Content Type: text/html
+
+Uri: https://rudgks.framer.website/work/vr
+File Name: C:\Downloaded Web Sites\rudgks.framer.website\work\vr.html
+Content Type: text/html
+
