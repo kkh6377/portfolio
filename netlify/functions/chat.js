@@ -21,16 +21,17 @@ exports.handler = async function (event) {
 포트폴리오 목적: 개인 포트폴리오 웹사이트
 페이지 구성:
 - Home
-- About
 - Work
+- About
 - Contact
 
 기술 스택:
 - HTML
 - CSS
 - JavaScript
-- Framer 기반 디자인 export
+- Framer 기반 디자인
 - Netlify 배포
+- Gemini API 기반 AI 챗봇
 
 프로젝트:
 - 포트폴리오 웹사이트
@@ -40,18 +41,19 @@ exports.handler = async function (event) {
 - Contact 페이지를 통해 확인할 수 있습니다.
 `;
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          {
-            role: "system",
-            content: `
+    const response = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": process.env.GEMINI_API_KEY
+        },
+        body: JSON.stringify({
+          system_instruction: {
+            parts: [
+              {
+                text: `
 너는 곽경한의 포트폴리오 웹사이트에 탑재된 AI 비서다.
 아래 포트폴리오 정보만 바탕으로 한국어로 답변한다.
 정보에 없는 내용은 추측하지 말고 "포트폴리오에 없는 정보입니다."라고 답한다.
@@ -60,25 +62,47 @@ exports.handler = async function (event) {
 [포트폴리오 정보]
 ${portfolioInfo}
 `
+              }
+            ]
           },
-          {
-            role: "user",
-            content: message
+          contents: [
+            {
+              parts: [
+                {
+                  text: message
+                }
+              ]
+            }
+          ],
+          generationConfig: {
+            temperature: 0.3,
+            maxOutputTokens: 500
           }
-        ],
-        temperature: 0.3
-      })
-    });
+        })
+      }
+    );
 
     const data = await response.json();
 
+    if (!response.ok) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({
+          error: data.error?.message || "Gemini API error",
+          answer: "AI 응답 생성 중 문제가 발생했습니다."
+        })
+      };
+    }
+
+    const answer =
+      data.candidates?.[0]?.content?.parts
+        ?.map((part) => part.text || "")
+        .join("")
+        .trim() || "답변을 생성하지 못했습니다.";
+
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        answer:
-          data.choices?.[0]?.message?.content ||
-          "답변을 생성하지 못했습니다."
-      })
+      body: JSON.stringify({ answer })
     };
   } catch (error) {
     return {
