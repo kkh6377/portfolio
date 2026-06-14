@@ -9,43 +9,69 @@
     "연락 방법 알려줘"
   ];
 
-  const aiIcon = `
-    <svg class="ai-symbol" viewBox="0 0 64 64" aria-hidden="true">
-      <rect x="4" y="4" width="56" height="56" rx="18" fill="#191919" />
-      <path
-        d="M18 33c0-10 6-18 15-20 8-2 17 2 21 10 6 2 10 7 10 14 0 10-9 18-21 18H31l-13 6 3-12c-4-4-6-9-6-16Z"
-        fill="none"
-        stroke="#67f5b5"
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M30 13c-4 5-4 12 1 17"
-        fill="none"
-        stroke="#67f5b5"
-        stroke-width="4"
-        stroke-linecap="round"
-      />
-      <path
-        d="M43 18c5 2 8 6 9 11"
-        fill="none"
-        stroke="#67f5b5"
-        stroke-width="4"
-        stroke-linecap="round"
-      />
-      <circle cx="29" cy="37" r="2.8" fill="#67f5b5" />
-      <circle cx="39" cy="37" r="2.8" fill="#67f5b5" />
-      <circle cx="49" cy="37" r="2.8" fill="#67f5b5" />
-    </svg>
-  `;
+  function createAiIcon(idSuffix) {
+    const gradientId = `aiCloudGradient-${idSuffix}`;
+    const softGradientId = `aiCloudSoftGradient-${idSuffix}`;
+
+    return `
+      <svg class="ai-symbol" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <linearGradient id="${gradientId}" x1="18" y1="82" x2="82" y2="18" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#5B7CFF" />
+            <stop offset="0.35" stop-color="#33D6FF" />
+            <stop offset="0.68" stop-color="#76FFB2" />
+            <stop offset="1" stop-color="#B16CFF" />
+          </linearGradient>
+          <radialGradient id="${softGradientId}" cx="35%" cy="30%" r="70%">
+            <stop stop-color="#8CFFB5" stop-opacity="0.42" />
+            <stop offset="0.55" stop-color="#38BDF8" stop-opacity="0.16" />
+            <stop offset="1" stop-color="#8B5CF6" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <path
+          d="M26 67C15 67 8 59 8 49c0-9 6-16 15-18C27 17 39 9 53 11c11 2 20 10 24 21 10 2 17 10 17 20 0 12-9 21-22 21H38L20 84l5-17Z"
+          fill="url(#${softGradientId})"
+        />
+
+        <path
+          d="M26 67C15 67 8 59 8 49c0-9 6-16 15-18C27 17 39 9 53 11c11 2 20 10 24 21 10 2 17 10 17 20 0 12-9 21-22 21H38L20 84l5-17Z"
+          fill="none"
+          stroke="url(#${gradientId})"
+          stroke-width="6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <path
+          d="M33 47c3-9 11-15 21-15 9 0 17 5 21 13"
+          fill="none"
+          stroke="url(#${gradientId})"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M38 60c6 6 18 6 24 0"
+          fill="none"
+          stroke="url(#${gradientId})"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+
+        <circle class="ai-cloud-dot" cx="36" cy="54" r="4.2" fill="url(#${gradientId})" />
+        <circle class="ai-cloud-dot" cx="50" cy="54" r="4.2" fill="url(#${gradientId})" />
+        <circle class="ai-cloud-dot" cx="64" cy="54" r="4.2" fill="url(#${gradientId})" />
+      </svg>
+    `;
+  }
 
   const launcher = document.createElement("button");
   launcher.className = "ai-chat-launcher";
   launcher.type = "button";
   launcher.setAttribute("aria-label", "AI chat 열기");
   launcher.innerHTML = `
-    <span class="ai-launcher-icon">${aiIcon}</span>
+    <span class="ai-launcher-icon">${createAiIcon("launcher")}</span>
     <span class="ai-launcher-label">AI chat</span>
   `;
   document.body.appendChild(launcher);
@@ -111,8 +137,9 @@
     row.className = `ai-message-row ${role}`;
 
     if (role === "bot") {
+      const iconId = `bot-${Date.now()}-${Math.random().toString(36).slice(2)}`;
       row.innerHTML = `
-        <div class="ai-bot-avatar">${aiIcon}</div>
+        <div class="ai-bot-avatar">${createAiIcon(iconId)}</div>
         <div class="ai-message bot"></div>
       `;
       row.querySelector(".ai-message").textContent = text;
@@ -127,10 +154,11 @@
   }
 
   function addThinkingMessage() {
+    const iconId = `thinking-${Date.now()}-${Math.random().toString(36).slice(2)}`;
     const row = document.createElement("div");
     row.className = "ai-message-row bot ai-thinking-row";
     row.innerHTML = `
-      <div class="ai-bot-avatar thinking">${aiIcon}</div>
+      <div class="ai-bot-avatar thinking">${createAiIcon(iconId)}</div>
       <div class="ai-message bot ai-thinking-message">
         <span>생각하는 중</span>
         <span class="ai-thinking-dots">
