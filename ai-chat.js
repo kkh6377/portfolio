@@ -1,57 +1,65 @@
 (function () {
   if (document.querySelector(".ai-chat-launcher")) return;
 
+  const suggestions = [
+    "대표 프로젝트를 알려줘",
+    "사용 가능한 기술 스택은?",
+    "채용 담당자 관점에서 요약해줘",
+    "VR 프로젝트 설명해줘",
+    "연락 방법 알려줘"
+  ];
+
   const aiIcon = `
     <svg class="ai-symbol" viewBox="0 0 128 128" aria-hidden="true">
-      <rect x="4" y="4" width="120" height="120" rx="28" fill="#191919" />
+      <rect x="4" y="4" width="120" height="120" rx="30" fill="#191919" />
       <path
-        d="M25 63c0-16 9-28 22-31 4-13 19-22 34-18 9 2 16 8 20 16 17-5 33 6 35 24 15 2 25 16 23 32"
+        d="M29 60c0-14 8-25 21-28 4-13 17-20 31-17 9 2 16 8 20 16 16-4 30 7 32 23 13 3 21 14 20 28"
         fill="none"
         stroke="url(#aiChatGradient)"
-        stroke-width="8"
+        stroke-width="7"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M24 75h11c5 19 23 32 51 32 33 0 58-18 64-45h11"
+        d="M24 75h11c5 19 23 31 50 31 32 0 56-17 63-43h10"
         fill="none"
         stroke="url(#aiChatGradient)"
-        stroke-width="8"
+        stroke-width="7"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M43 95l-8 25 26-8"
+        d="M43 94l-8 24 25-8"
         fill="none"
         stroke="url(#aiChatGradient)"
-        stroke-width="8"
+        stroke-width="7"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M50 34c-8 8-7 20 2 26"
+        d="M50 35c-8 8-7 19 2 25"
         fill="none"
         stroke="url(#aiChatGradient)"
-        stroke-width="8"
+        stroke-width="7"
         stroke-linecap="round"
       />
       <path
-        d="M83 18c-10 7-12 21-5 32"
+        d="M83 20c-9 7-11 20-4 30"
         fill="none"
         stroke="url(#aiChatGradient)"
-        stroke-width="8"
+        stroke-width="7"
         stroke-linecap="round"
       />
       <path
-        d="M101 40c11 2 19 10 22 21"
+        d="M100 41c10 2 17 9 20 19"
         fill="none"
         stroke="url(#aiChatGradient)"
-        stroke-width="8"
+        stroke-width="7"
         stroke-linecap="round"
       />
-      <circle cx="54" cy="73" r="6" fill="url(#aiChatGradient)" />
-      <circle cx="75" cy="73" r="6" fill="url(#aiChatGradient)" />
-      <circle cx="96" cy="73" r="6" fill="url(#aiChatGradient)" />
+      <circle cx="55" cy="74" r="5.5" fill="url(#aiChatGradient)" />
+      <circle cx="75" cy="74" r="5.5" fill="url(#aiChatGradient)" />
+      <circle cx="95" cy="74" r="5.5" fill="url(#aiChatGradient)" />
       <defs>
         <linearGradient id="aiChatGradient" x1="26" y1="18" x2="112" y2="107" gradientUnits="userSpaceOnUse">
           <stop stop-color="#8CFF91" />
@@ -81,6 +89,10 @@
 
     <div class="ai-chat-messages" id="aiChatMessages"></div>
 
+    <div class="ai-chat-suggestions">
+      ${suggestions.map((text) => `<button type="button">${text}</button>`).join("")}
+    </div>
+
     <form class="ai-chat-form">
       <input type="text" placeholder="How else can I help?" autocomplete="off" />
       <button type="submit" aria-label="질문 보내기">↑</button>
@@ -92,6 +104,7 @@
   const form = chat.querySelector(".ai-chat-form");
   const input = form.querySelector("input");
   const closeButton = chat.querySelector(".ai-chat-close");
+  const suggestionButtons = chat.querySelectorAll(".ai-chat-suggestions button");
 
   addMessage(
     "bot",
@@ -104,6 +117,12 @@
 
   closeButton.addEventListener("click", () => {
     chat.classList.remove("open");
+  });
+
+  suggestionButtons.forEach((suggestionButton) => {
+    suggestionButton.addEventListener("click", () => {
+      sendMessage(suggestionButton.textContent);
+    });
   });
 
   form.addEventListener("submit", (event) => {
