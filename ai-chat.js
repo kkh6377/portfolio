@@ -1,29 +1,73 @@
 (function () {
   if (document.querySelector(".ai-chat-launcher")) return;
 
+  const aiIcon = `
+    <svg class="ai-symbol" viewBox="0 0 128 128" aria-hidden="true">
+      <rect x="4" y="4" width="120" height="120" rx="28" fill="#191919" />
+      <path
+        d="M25 63c0-16 9-28 22-31 4-13 19-22 34-18 9 2 16 8 20 16 17-5 33 6 35 24 15 2 25 16 23 32"
+        fill="none"
+        stroke="url(#aiChatGradient)"
+        stroke-width="8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M24 75h11c5 19 23 32 51 32 33 0 58-18 64-45h11"
+        fill="none"
+        stroke="url(#aiChatGradient)"
+        stroke-width="8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M43 95l-8 25 26-8"
+        fill="none"
+        stroke="url(#aiChatGradient)"
+        stroke-width="8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M50 34c-8 8-7 20 2 26"
+        fill="none"
+        stroke="url(#aiChatGradient)"
+        stroke-width="8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M83 18c-10 7-12 21-5 32"
+        fill="none"
+        stroke="url(#aiChatGradient)"
+        stroke-width="8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M101 40c11 2 19 10 22 21"
+        fill="none"
+        stroke="url(#aiChatGradient)"
+        stroke-width="8"
+        stroke-linecap="round"
+      />
+      <circle cx="54" cy="73" r="6" fill="url(#aiChatGradient)" />
+      <circle cx="75" cy="73" r="6" fill="url(#aiChatGradient)" />
+      <circle cx="96" cy="73" r="6" fill="url(#aiChatGradient)" />
+      <defs>
+        <linearGradient id="aiChatGradient" x1="26" y1="18" x2="112" y2="107" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#8CFF91" />
+          <stop offset="1" stop-color="#57F4D4" />
+        </linearGradient>
+      </defs>
+    </svg>
+  `;
+
   const launcher = document.createElement("button");
   launcher.className = "ai-chat-launcher";
   launcher.type = "button";
-  launcher.setAttribute("aria-label", "Ask Portfolio 열기");
+  launcher.setAttribute("aria-label", "AI chat 열기");
   launcher.innerHTML = `
-    <svg viewBox="0 0 64 64" aria-hidden="true">
-      <defs>
-        <linearGradient id="aiIconGradient" x1="10" y1="54" x2="54" y2="10" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#1D4ED8" />
-          <stop offset="0.45" stop-color="#38BDF8" />
-          <stop offset="1" stop-color="#8B5CF6" />
-        </linearGradient>
-      </defs>
-      <circle cx="32" cy="32" r="28" fill="#ffffff" />
-      <path
-        d="M32 12c6 0 10 4 10 10 0 4-2 7-5 9 4 1 8 5 8 10 0 6-5 11-12 11-5 0-9-3-11-7-2 2-5 3-8 3-6 0-10-4-10-10 0-5 3-9 8-10-2-2-4-5-4-9 0-6 5-10 11-10 5 0 9 3 11 7 1-2 2-4 2-4Z"
-        fill="url(#aiIconGradient)"
-        opacity="0.95"
-      />
-      <circle cx="24" cy="31" r="3" fill="#ffffff" />
-      <circle cx="39" cy="31" r="3" fill="#ffffff" />
-      <path d="M27 40c3 3 9 3 12 0" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
-    </svg>
+    <span class="ai-launcher-icon">${aiIcon}</span>
+    <span class="ai-launcher-label">AI chat</span>
   `;
   document.body.appendChild(launcher);
 
@@ -78,7 +122,7 @@
 
     if (role === "bot") {
       row.innerHTML = `
-        <div class="ai-bot-avatar"></div>
+        <div class="ai-bot-avatar">${aiIcon}</div>
         <div class="ai-message bot"></div>
       `;
       row.querySelector(".ai-message").textContent = text;
@@ -96,7 +140,7 @@
     const row = document.createElement("div");
     row.className = "ai-message-row bot ai-thinking-row";
     row.innerHTML = `
-      <div class="ai-bot-avatar thinking"></div>
+      <div class="ai-bot-avatar thinking">${aiIcon}</div>
       <div class="ai-message bot ai-thinking-message">
         <span>생각하는 중</span>
         <span class="ai-thinking-dots">
