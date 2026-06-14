@@ -1,33 +1,29 @@
 (function () {
   if (document.querySelector(".ai-chat-launcher")) return;
 
-  const suggestions = [
-    "대표 프로젝트를 알려줘",
-    "사용 가능한 기술 스택은?",
-    "채용 담당자 관점에서 요약해줘",
-    "연락 방법 알려줘"
-  ];
-
-  const robotIcon = `
-    <svg class="ai-robot-icon" viewBox="0 0 64 64" aria-hidden="true">
-      <rect x="14" y="22" width="36" height="24" rx="12" fill="currentColor" />
-      <circle cx="25" cy="34" r="4" fill="#101820" />
-      <circle cx="39" cy="34" r="4" fill="#101820" />
-      <path d="M29 40c2 2 4 2 6 0" fill="none" stroke="#101820" stroke-width="3" stroke-linecap="round" />
-      <path d="M24 18l-3-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
-      <path d="M40 18l3-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
-      <circle cx="20" cy="10" r="2" fill="currentColor" />
-      <circle cx="44" cy="10" r="2" fill="currentColor" />
-    </svg>
-  `;
-
   const launcher = document.createElement("button");
   launcher.className = "ai-chat-launcher";
   launcher.type = "button";
   launcher.setAttribute("aria-label", "Ask Portfolio 열기");
   launcher.innerHTML = `
-    <span class="ai-launcher-icon">${robotIcon}</span>
-    <span class="ai-launcher-text">Ask Portfolio</span>
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <defs>
+        <linearGradient id="aiIconGradient" x1="10" y1="54" x2="54" y2="10" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#1D4ED8" />
+          <stop offset="0.45" stop-color="#38BDF8" />
+          <stop offset="1" stop-color="#8B5CF6" />
+        </linearGradient>
+      </defs>
+      <circle cx="32" cy="32" r="28" fill="#ffffff" />
+      <path
+        d="M32 12c6 0 10 4 10 10 0 4-2 7-5 9 4 1 8 5 8 10 0 6-5 11-12 11-5 0-9-3-11-7-2 2-5 3-8 3-6 0-10-4-10-10 0-5 3-9 8-10-2-2-4-5-4-9 0-6 5-10 11-10 5 0 9 3 11 7 1-2 2-4 2-4Z"
+        fill="url(#aiIconGradient)"
+        opacity="0.95"
+      />
+      <circle cx="24" cy="31" r="3" fill="#ffffff" />
+      <circle cx="39" cy="31" r="3" fill="#ffffff" />
+      <path d="M27 40c3 3 9 3 12 0" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+    </svg>
   `;
   document.body.appendChild(launcher);
 
@@ -35,22 +31,15 @@
   chat.className = "ai-chat-window";
   chat.innerHTML = `
     <div class="ai-chat-header">
-      <button class="ai-chat-close" type="button" aria-label="AI 채팅 닫기">‹</button>
-      <div>
-        <h3>Ask Portfolio</h3>
-        <p>포트폴리오에 대해 질문해보세요.</p>
-      </div>
+      <h3>Ask Portfolio</h3>
+      <button class="ai-chat-close" type="button" aria-label="AI 채팅 닫기">×</button>
     </div>
 
     <div class="ai-chat-messages" id="aiChatMessages"></div>
 
-    <div class="ai-chat-suggestions">
-      ${suggestions.map((text) => `<button type="button">${text}</button>`).join("")}
-    </div>
-
     <form class="ai-chat-form">
-      <input type="text" placeholder="Ask a question..." autocomplete="off" />
-      <button type="submit" aria-label="질문 보내기">→</button>
+      <input type="text" placeholder="How else can I help?" autocomplete="off" />
+      <button type="submit" aria-label="질문 보내기">↑</button>
     </form>
   `;
   document.body.appendChild(chat);
@@ -59,7 +48,6 @@
   const form = chat.querySelector(".ai-chat-form");
   const input = form.querySelector("input");
   const closeButton = chat.querySelector(".ai-chat-close");
-  const suggestionButtons = chat.querySelectorAll(".ai-chat-suggestions button");
 
   addMessage(
     "bot",
@@ -74,12 +62,6 @@
     chat.classList.remove("open");
   });
 
-  suggestionButtons.forEach((suggestionButton) => {
-    suggestionButton.addEventListener("click", () => {
-      sendMessage(suggestionButton.textContent);
-    });
-  });
-
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -91,37 +73,48 @@
   });
 
   function addMessage(role, text) {
-    const message = document.createElement("div");
-    message.className = `ai-message ${role}`;
-    message.textContent = text;
-    messages.appendChild(message);
+    const row = document.createElement("div");
+    row.className = `ai-message-row ${role}`;
+
+    if (role === "bot") {
+      row.innerHTML = `
+        <div class="ai-bot-avatar"></div>
+        <div class="ai-message bot"></div>
+      `;
+      row.querySelector(".ai-message").textContent = text;
+    } else {
+      row.innerHTML = `<div class="ai-message user"></div>`;
+      row.querySelector(".ai-message").textContent = text;
+    }
+
+    messages.appendChild(row);
     messages.scrollTop = messages.scrollHeight;
+    return row;
   }
 
   function addThinkingMessage() {
-    const message = document.createElement("div");
-    message.className = "ai-message bot ai-thinking-message";
-    message.innerHTML = `
-      <span class="ai-thinking-robot">
-        <span class="ai-thinking-eye"></span>
-        <span class="ai-thinking-eye"></span>
-      </span>
-      <span class="ai-thinking-text">생각하는 중</span>
-      <span class="ai-thinking-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
+    const row = document.createElement("div");
+    row.className = "ai-message-row bot ai-thinking-row";
+    row.innerHTML = `
+      <div class="ai-bot-avatar thinking"></div>
+      <div class="ai-message bot ai-thinking-message">
+        <span>생각하는 중</span>
+        <span class="ai-thinking-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
     `;
-    messages.appendChild(message);
+    messages.appendChild(row);
     messages.scrollTop = messages.scrollHeight;
-    return message;
+    return row;
   }
 
   async function sendMessage(text) {
     addMessage("user", text);
 
-    const loadingMessage = addThinkingMessage();
+    const loadingRow = addThinkingMessage();
 
     try {
       const response = await fetch("/.netlify/functions/chat", {
@@ -134,13 +127,11 @@
 
       const data = await response.json();
 
-      loadingMessage.className = "ai-message bot";
-      loadingMessage.textContent =
-        data.answer || "답변을 가져오지 못했습니다.";
+      loadingRow.remove();
+      addMessage("bot", data.answer || "답변을 가져오지 못했습니다.");
     } catch (error) {
-      loadingMessage.className = "ai-message bot";
-      loadingMessage.textContent =
-        "AI 연결 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.";
+      loadingRow.remove();
+      addMessage("bot", "AI 연결 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.");
     }
   }
 })();
