@@ -10,62 +10,33 @@
   ];
 
   const aiIcon = `
-    <svg class="ai-symbol" viewBox="0 0 128 128" aria-hidden="true">
-      <rect x="4" y="4" width="120" height="120" rx="30" fill="#191919" />
+    <svg class="ai-symbol" viewBox="0 0 64 64" aria-hidden="true">
+      <rect x="4" y="4" width="56" height="56" rx="18" fill="#191919" />
       <path
-        d="M29 60c0-14 8-25 21-28 4-13 17-20 31-17 9 2 16 8 20 16 16-4 30 7 32 23 13 3 21 14 20 28"
+        d="M18 33c0-10 6-18 15-20 8-2 17 2 21 10 6 2 10 7 10 14 0 10-9 18-21 18H31l-13 6 3-12c-4-4-6-9-6-16Z"
         fill="none"
-        stroke="url(#aiChatGradient)"
-        stroke-width="7"
+        stroke="#67f5b5"
+        stroke-width="4"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M24 75h11c5 19 23 31 50 31 32 0 56-17 63-43h10"
+        d="M30 13c-4 5-4 12 1 17"
         fill="none"
-        stroke="url(#aiChatGradient)"
-        stroke-width="7"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M43 94l-8 24 25-8"
-        fill="none"
-        stroke="url(#aiChatGradient)"
-        stroke-width="7"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M50 35c-8 8-7 19 2 25"
-        fill="none"
-        stroke="url(#aiChatGradient)"
-        stroke-width="7"
+        stroke="#67f5b5"
+        stroke-width="4"
         stroke-linecap="round"
       />
       <path
-        d="M83 20c-9 7-11 20-4 30"
+        d="M43 18c5 2 8 6 9 11"
         fill="none"
-        stroke="url(#aiChatGradient)"
-        stroke-width="7"
+        stroke="#67f5b5"
+        stroke-width="4"
         stroke-linecap="round"
       />
-      <path
-        d="M100 41c10 2 17 9 20 19"
-        fill="none"
-        stroke="url(#aiChatGradient)"
-        stroke-width="7"
-        stroke-linecap="round"
-      />
-      <circle cx="55" cy="74" r="5.5" fill="url(#aiChatGradient)" />
-      <circle cx="75" cy="74" r="5.5" fill="url(#aiChatGradient)" />
-      <circle cx="95" cy="74" r="5.5" fill="url(#aiChatGradient)" />
-      <defs>
-        <linearGradient id="aiChatGradient" x1="26" y1="18" x2="112" y2="107" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#8CFF91" />
-          <stop offset="1" stop-color="#57F4D4" />
-        </linearGradient>
-      </defs>
+      <circle cx="29" cy="37" r="2.8" fill="#67f5b5" />
+      <circle cx="39" cy="37" r="2.8" fill="#67f5b5" />
+      <circle cx="49" cy="37" r="2.8" fill="#67f5b5" />
     </svg>
   `;
 
