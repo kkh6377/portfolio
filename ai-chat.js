@@ -4,6 +4,7 @@
   const suggestions = [
     "대표 프로젝트를 알려줘",
     "사용 가능한 기술 스택은?",
+    "채용 담당자 관점에서 요약해줘",
     "블렌더 갤러리를 보고싶어",
     "깃허브 링크를 구경하고싶어",
     "연락 방법 알려줘"
@@ -53,7 +54,10 @@
   chat.className = "ai-chat-window";
   chat.innerHTML = `
     <div class="ai-chat-header">
-      <h3>Ask Portfolio</h3>
+      <div>
+        <h3>Ask Portfolio</h3>
+        <p>프로젝트 설명, 기술 스택, 관련 페이지 이동까지 도와드려요.</p>
+      </div>
       <button class="ai-chat-close" type="button" aria-label="AI 채팅 닫기">×</button>
     </div>
 
@@ -82,6 +86,7 @@
     chat.classList.add("open");
     addMessage("user", savedConversation.question);
     addMessage("bot", savedConversation.answer);
+    if (savedConversation.notice) addNotice(savedConversation.notice);
   } else {
     addMessage("bot", "안녕하세요. 이 포트폴리오의 프로젝트, 기술 스택, 연락 방법에 대해 답변할 수 있어요.");
   }
@@ -104,10 +109,8 @@
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-
     const text = input.value.trim();
     if (!text) return;
-
     input.value = "";
     sendMessage(text);
   });
@@ -134,7 +137,8 @@
     if (text.includes("깃허브") || text.includes("github")) {
       return {
         type: "external",
-        url: "https://github.com/kkh6377"
+        url: "https://github.com/kkh6377",
+        label: "GitHub"
       };
     }
 
@@ -142,76 +146,97 @@
       return {
         type: "internal",
         path: "/about",
-        scrollTarget: "blender"
+        scrollTarget: "blender",
+        label: "Blender Gallery"
       };
     }
 
-    if (text.includes("사용가능한기술스택") || text.includes("기술스택") || text.includes("사용기술") || text.includes("스택") || text.includes("skill")) {
+    if (
+      text.includes("사용가능한기술스택") ||
+      text.includes("기술스택") ||
+      text.includes("사용기술") ||
+      text.includes("스택") ||
+      text.includes("skill")
+    ) {
       return {
         type: "internal",
         path: "/#clients",
-        scrollTarget: "clients"
+        scrollTarget: "clients",
+        label: "기술 스택 영역"
       };
     }
 
-    if (text.includes("대표프로젝트") || text.includes("대표작") || text.includes("프로젝트알려줘") || text.includes("프로젝트보여줘")) {
+    if (
+      text.includes("대표프로젝트") ||
+      text.includes("대표작") ||
+      text.includes("프로젝트알려줘") ||
+      text.includes("프로젝트보여줘")
+    ) {
       return {
         type: "internal",
         path: "/work#all",
-        scrollTarget: "projects"
+        scrollTarget: "projects",
+        label: "대표 프로젝트 영역"
       };
     }
 
     if (text.includes("연락") || text.includes("문의") || text.includes("contact") || text.includes("이메일") || text.includes("메일")) {
       return {
         type: "internal",
-        path: "/contact"
+        path: "/contact",
+        label: "Contact 페이지"
       };
     }
 
     if (text.includes("vr") || text.includes("운전") || text.includes("시뮬레이터") || text.includes("drive")) {
       return {
         type: "internal",
-        path: "/work/vr"
+        path: "/work/vr",
+        label: "VR Drive Simulator 페이지"
       };
     }
 
     if (text.includes("escaperoom") || text.includes("escape") || text.includes("방탈출") || text.includes("사막") || text.includes("우주")) {
       return {
         type: "internal",
-        path: "/work/escaperoom-desert-space-theme-project"
+        path: "/work/escaperoom-desert-space-theme-project",
+        label: "EscapeRoom 프로젝트 페이지"
       };
     }
 
     if (text.includes("hi-five") || text.includes("hifive") || text.includes("아이돌") || text.includes("뮤직비디오")) {
       return {
         type: "internal",
-        path: "/work/rivian"
+        path: "/work/rivian",
+        label: "HI-five 프로젝트 페이지"
       };
     }
 
     if (text.includes("shooting") || text.includes("roblox") || text.includes("좀비") || text.includes("슈팅")) {
       return {
         type: "internal",
-        path: "/work/nothing"
+        path: "/work/nothing",
+        label: "Powerful Shooting 프로젝트 페이지"
       };
     }
 
     if (text.includes("about") || text.includes("소개") || text.includes("자기소개") || text.includes("개발자")) {
       return {
         type: "internal",
-        path: "/about"
+        path: "/about",
+        label: "About 페이지"
       };
     }
 
     return null;
   }
 
-  function saveConversation(question, answer) {
-    sessionStorage.setItem(
-      "aiChatLastConversation",
-      JSON.stringify({ question, answer })
-    );
+  function saveConversation(question, answer, notice) {
+    sessionStorage.setItem("aiChatLastConversation", JSON.stringify({
+      question,
+      answer,
+      notice
+    }));
   }
 
   function moveToRelatedPage(question, answer) {
@@ -219,9 +244,10 @@
     if (!target) return;
 
     if (target.type === "external") {
+      addNotice(`${target.label} 링크로 이동할게요.`);
       window.setTimeout(() => {
         window.location.href = target.url;
-      }, 1400);
+      }, 1200);
       return;
     }
 
@@ -229,32 +255,36 @@
     const currentPath = normalizePath(window.location.pathname);
     const nextPath = normalizePath(targetPathOnly);
 
+    addNotice(`${target.label}로 이동할게요.`);
+
     if (target.scrollTarget) {
       sessionStorage.setItem("aiChatScrollTarget", target.scrollTarget);
     }
 
-    saveConversation(question, answer);
-
     window.setTimeout(() => {
       if (currentPath === nextPath) {
+        if (target.path.includes("#")) {
+          window.history.replaceState(null, "", target.path);
+        }
         scrollToSavedTarget();
+        addNotice(`${target.label}로 이동했어요.`);
         return;
       }
 
+      saveConversation(question, answer, `${target.label}로 이동했어요.`);
       window.location.href = target.path;
-    }, 1400);
+    }, 1200);
   }
 
   function scrollToSavedTarget() {
     const target = sessionStorage.getItem("aiChatScrollTarget");
     if (!target) return;
-
     sessionStorage.removeItem("aiChatScrollTarget");
 
     const keywordMap = {
       blender: ["a small look into my blender gallery", "blender gallery", "blender"],
-      clients: ["clients"],
-      projects: ["4+", "projects", "escaperoom", "vr drive simulator"]
+      clients: ["clients", "c#", "python", "unity", "unreal engine"],
+      projects: ["escaperoom", "vr drive simulator", "hi-five", "powerful shooting"]
     };
 
     const keywords = keywordMap[target] || [target];
@@ -262,20 +292,16 @@
     let attempts = 0;
     const timer = window.setInterval(() => {
       attempts += 1;
-
       const element = findElementByKeywords(keywords);
+
       if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+        highlightElement(element);
         window.clearInterval(timer);
         return;
       }
 
-      if (attempts > 20) {
-        window.clearInterval(timer);
-      }
+      if (attempts > 24) window.clearInterval(timer);
     }, 250);
   }
 
@@ -287,7 +313,6 @@
         acceptNode(node) {
           const text = node.textContent.toLowerCase().replace(/\s+/g, " ").trim();
           if (!text) return NodeFilter.FILTER_REJECT;
-
           const hasKeyword = keywords.some((keyword) => text.includes(keyword));
           return hasKeyword ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
         }
@@ -298,17 +323,41 @@
 
     while (current) {
       const element = current.parentElement;
+
       if (element) {
         const rect = element.getBoundingClientRect();
-        if (rect.width > 0 && rect.height > 0) {
-          return element;
-        }
+        if (rect.width > 0 && rect.height > 0) return element;
       }
 
       current = walker.nextNode();
     }
 
     return null;
+  }
+
+  function getHighlightTarget(element) {
+    let target = element;
+
+    for (let i = 0; i < 5; i += 1) {
+      const parent = target.parentElement;
+      if (!parent || parent === document.body) break;
+
+      const rect = parent.getBoundingClientRect();
+      const isUsefulSize = rect.width > 260 && rect.height > 80 && rect.height < window.innerHeight * 1.5;
+
+      if (isUsefulSize) target = parent;
+    }
+
+    return target;
+  }
+
+  function highlightElement(element) {
+    const target = getHighlightTarget(element);
+    target.classList.add("ai-scroll-highlight");
+
+    window.setTimeout(() => {
+      target.classList.remove("ai-scroll-highlight");
+    }, 2600);
   }
 
   function addMessage(role, text) {
@@ -332,6 +381,16 @@
     return row;
   }
 
+  function addNotice(text) {
+    const row = document.createElement("div");
+    row.className = "ai-notice-row";
+    row.innerHTML = `<div class="ai-notice"></div>`;
+    row.querySelector(".ai-notice").textContent = text;
+    messages.appendChild(row);
+    messages.scrollTop = messages.scrollHeight;
+    return row;
+  }
+
   function addThinkingMessage() {
     const iconId = `thinking-${Date.now()}-${Math.random().toString(36).slice(2)}`;
     const row = document.createElement("div");
@@ -340,11 +399,7 @@
       <div class="ai-bot-avatar thinking">${createAiIcon(iconId)}</div>
       <div class="ai-message bot ai-thinking-message">
         <span>생각하는 중</span>
-        <span class="ai-thinking-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
+        <span class="ai-thinking-dots"><span></span><span></span><span></span></span>
       </div>
     `;
     messages.appendChild(row);
@@ -354,13 +409,14 @@
 
   async function sendMessage(text) {
     addMessage("user", text);
-
     const loadingRow = addThinkingMessage();
 
     try {
       const response = await fetch("/.netlify/functions/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ message: text })
       });
 
