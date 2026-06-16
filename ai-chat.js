@@ -103,10 +103,18 @@
   const closeButton = chat.querySelector(".ai-chat-close");
   const suggestionButtons = chat.querySelectorAll(".ai-chat-suggestions button");
 
-  addMessage(
-    "bot",
-    "안녕하세요. 이 포트폴리오의 프로젝트, 기술 스택, 연락 방법에 대해 답변할 수 있어요."
-  );
+  const savedConversation = getSavedConversation();
+
+  if (savedConversation) {
+    chat.classList.add("open");
+    addMessage("user", savedConversation.question);
+    addMessage("bot", savedConversation.answer);
+  } else {
+    addMessage(
+      "bot",
+      "안녕하세요. 이 포트폴리오의 프로젝트, 기술 스택, 연락 방법에 대해 답변할 수 있어요."
+    );
+  }
 
   launcher.addEventListener("click", () => {
     chat.classList.toggle("open");
@@ -131,6 +139,130 @@
     input.value = "";
     sendMessage(text);
   });
+
+  function getSavedConversation() {
+    try {
+      const raw = sessionStorage.getItem("aiChatLastConversation");
+      if (!raw) return null;
+
+      sessionStorage.removeItem("aiChatLastConversation");
+      return JSON.parse(raw);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function normalizePath(path) {
+    if (!path) return "/";
+    return path.replace(/\/$/, "") || "/";
+  }
+
+  function getNavigationPath(question, answer) {
+    const text = `${question} ${answer}`.toLowerCase();
+
+    if (
+      text.includes("연락") ||
+      text.includes("문의") ||
+      text.includes("contact") ||
+      text.includes("email") ||
+      text.includes("이메일") ||
+      text.includes("메일") ||
+      text.includes("call") ||
+      text.includes("text")
+    ) {
+      return "/contact";
+    }
+
+    if (
+      text.includes("vr") ||
+      text.includes("drive") ||
+      text.includes("simulator") ||
+      text.includes("운전") ||
+      text.includes("시뮬레이터")
+    ) {
+      return "/work/vr";
+    }
+
+    if (
+      text.includes("escape") ||
+      text.includes("escaperoom") ||
+      text.includes("desert") ||
+      text.includes("space") ||
+      text.includes("방탈출") ||
+      text.includes("퍼즐") ||
+      text.includes("사막") ||
+      text.includes("우주")
+    ) {
+      return "/work/escaperoom-desert-space-theme-project";
+    }
+
+    if (
+      text.includes("hi-five") ||
+      text.includes("idol") ||
+      text.includes("music video") ||
+      text.includes("뮤직비디오") ||
+      text.includes("아이돌")
+    ) {
+      return "/work/rivian";
+    }
+
+    if (
+      text.includes("shooting") ||
+      text.includes("roblox") ||
+      text.includes("zombie") ||
+      text.includes("슈팅") ||
+      text.includes("좀비")
+    ) {
+      return "/work/nothing";
+    }
+
+    if (
+      text.includes("프로젝트") ||
+      text.includes("project") ||
+      text.includes("work") ||
+      text.includes("작업물") ||
+      text.includes("대표")
+    ) {
+      return "/work";
+    }
+
+    if (
+      text.includes("기술") ||
+      text.includes("스택") ||
+      text.includes("skill") ||
+      text.includes("about") ||
+      text.includes("소개") ||
+      text.includes("자기소개") ||
+      text.includes("채용") ||
+      text.includes("개발자")
+    ) {
+      return "/about";
+    }
+
+    return null;
+  }
+
+  function moveToRelatedPage(question, answer) {
+    const targetPath = getNavigationPath(question, answer);
+    if (!targetPath) return;
+
+    const currentPath = normalizePath(window.location.pathname);
+    const nextPath = normalizePath(targetPath);
+
+    if (currentPath === nextPath) return;
+
+    sessionStorage.setItem(
+      "aiChatLastConversation",
+      JSON.stringify({
+        question,
+        answer
+      })
+    );
+
+    window.setTimeout(() => {
+      window.location.href = targetPath;
+    }, 1400);
+  }
 
   function addMessage(role, text) {
     const row = document.createElement("div");
@@ -188,9 +320,11 @@
       });
 
       const data = await response.json();
+      const answer = data.answer || "답변을 가져오지 못했습니다.";
 
       loadingRow.remove();
-      addMessage("bot", data.answer || "답변을 가져오지 못했습니다.");
+      addMessage("bot", answer);
+      moveToRelatedPage(text, answer);
     } catch (error) {
       loadingRow.remove();
       addMessage("bot", "AI 연결 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.");
