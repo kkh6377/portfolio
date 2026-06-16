@@ -91,7 +91,7 @@
     addMessage("bot", "안녕하세요. 이 포트폴리오의 프로젝트, 기술 스택, 연락 방법에 대해 답변할 수 있어요.");
   }
 
-  scrollToSavedTarget();
+  window.setTimeout(scrollToSavedTarget, 450);
 
   launcher.addEventListener("click", () => {
     chat.classList.toggle("open");
@@ -129,6 +129,11 @@
   function normalizePath(path) {
     if (!path) return "/";
     return path.replace(/\/$/, "") || "/";
+  }
+
+  function getHashFromPath(path) {
+    if (!path.includes("#")) return "";
+    return decodeURIComponent(path.split("#")[1] || "");
   }
 
   function getNavigationTarget(question) {
@@ -184,6 +189,7 @@
       return {
         type: "internal",
         path: "/contact",
+        scrollTarget: "contact",
         label: "Contact 페이지"
       };
     }
@@ -192,6 +198,7 @@
       return {
         type: "internal",
         path: "/work/vr",
+        scrollTarget: "projectDetail",
         label: "VR Drive Simulator 페이지"
       };
     }
@@ -200,6 +207,7 @@
       return {
         type: "internal",
         path: "/work/escaperoom-desert-space-theme-project",
+        scrollTarget: "projectDetail",
         label: "EscapeRoom 프로젝트 페이지"
       };
     }
@@ -208,6 +216,7 @@
       return {
         type: "internal",
         path: "/work/rivian",
+        scrollTarget: "projectDetail",
         label: "HI-five 프로젝트 페이지"
       };
     }
@@ -216,6 +225,7 @@
       return {
         type: "internal",
         path: "/work/nothing",
+        scrollTarget: "projectDetail",
         label: "Powerful Shooting 프로젝트 페이지"
       };
     }
@@ -224,6 +234,7 @@
       return {
         type: "internal",
         path: "/about",
+        scrollTarget: "about",
         label: "About 페이지"
       };
     }
@@ -251,6 +262,7 @@
       return;
     }
 
+    const hash = getHashFromPath(target.path);
     const targetPathOnly = target.path.split("#")[0] || "/";
     const currentPath = normalizePath(window.location.pathname);
     const nextPath = normalizePath(targetPathOnly);
@@ -261,51 +273,208 @@
       sessionStorage.setItem("aiChatScrollTarget", target.scrollTarget);
     }
 
+    if (hash) {
+      sessionStorage.setItem("aiChatScrollHash", hash);
+    }
+
     window.setTimeout(() => {
       if (currentPath === nextPath) {
-        if (target.path.includes("#")) {
+        if (hash) {
           window.history.replaceState(null, "", target.path);
         }
+
         scrollToSavedTarget();
-        addNotice(`${target.label}로 이동했어요.`);
+        addNotice(`${target.label}을 강조했어요.`);
         return;
       }
 
-      saveConversation(question, answer, `${target.label}로 이동했어요.`);
+      saveConversation(question, answer, `${target.label}로 이동했어요. 관련 영역을 강조해둘게요.`);
       window.location.href = target.path;
     }, 1200);
   }
 
-  function scrollToSavedTarget() {
-    const target = sessionStorage.getItem("aiChatScrollTarget");
-    if (!target) return;
-    sessionStorage.removeItem("aiChatScrollTarget");
-
-    const keywordMap = {
-      blender: ["a small look into my blender gallery", "blender gallery", "blender"],
-      clients: ["clients", "c#", "python", "unity", "unreal engine"],
-      projects: ["escaperoom", "vr drive simulator", "hi-five", "powerful shooting"]
+  function getScrollConfig(target, hash) {
+    const configs = {
+      blender: {
+        hashes: ["blender", "gallery"],
+        keywords: ["a small look into my blender gallery", "blender gallery", "blender"]
+      },
+      clients: {
+        hashes: ["clients"],
+        keywords: ["clients", "c#", "python", "unity", "unreal engine", "blender", "javascript"]
+      },
+      projects: {
+        hashes: ["all", "work", "projects"],
+        keywords: ["escaperoom", "vr drive simulator", "hi-five", "powerful shooting"]
+      },
+      contact: {
+        hashes: ["contact"],
+        keywords: ["contact", "book a call", "send a text", "email", "message"]
+      },
+      about: {
+        hashes: ["about"],
+        keywords: ["about", "i am", "developer", "blender"]
+      },
+      projectDetail: {
+        hashes: [],
+        keywords: ["read time", "client", "industry", "duration", "start", "end"]
+      }
     };
 
-    const keywords = keywordMap[target] || [target];
+    const config = configs[target] || {
+      hashes: [],
+      keywords: []
+    };
+
+    if (hash && !config.hashes.includes(hash)) {
+      config.hashes.unshift(hash);
+    }
+
+    return config;
+  }
+
+  function scrollToSavedTarget() {
+    const target = sessionStorage.getItem("aiChatScrollTarget");
+    const hash = sessionStorage.getItem("aiChatScrollHash") || window.location.hash.replace("#", "");
+
+    if (!target && !hash) return;
+
+    sessionStorage.removeItem("aiChatScrollTarget");
+    sessionStorage.removeItem("aiChatScrollHash");
+
+    const config = getScrollConfig(target, hash);
 
     let attempts = 0;
     const timer = window.setInterval(() => {
       attempts += 1;
-      const element = findElementByKeywords(keywords);
+
+      const element =
+        findElementByHashes(config.hashes) ||
+        findSectionByKeywords(config.keywords, target);
 
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
-        highlightElement(element);
+        const highlightTarget = getHighlightTarget(element, target);
+
+        highlightTarget.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+        window.setTimeout(() => {
+          highlightElement(highlightTarget);
+        }, 450);
+
         window.clearInterval(timer);
         return;
       }
 
-      if (attempts > 24) window.clearInterval(timer);
+      if (attempts > 28) {
+        window.clearInterval(timer);
+      }
     }, 250);
   }
 
-  function findElementByKeywords(keywords) {
+  function safeSelectorValue(value) {
+    return String(value).replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+  }
+
+  function isInsideChat(element) {
+    return Boolean(element.closest(".ai-chat-window, .ai-chat-launcher"));
+  }
+
+  function isVisibleElement(element) {
+    if (!element || element === document.body || element === document.documentElement) return false;
+    if (isInsideChat(element)) return false;
+
+    const rect = element.getBoundingClientRect();
+    return rect.width > 12 && rect.height > 12;
+  }
+
+  function getUsableElement(element) {
+    if (!element) return null;
+
+    if (isVisibleElement(element)) return element;
+
+    const children = Array.from(element.querySelectorAll("*"));
+    const visibleChild = children.find(isVisibleElement);
+    if (visibleChild) return visibleChild;
+
+    let next = element.nextElementSibling;
+    while (next) {
+      if (isVisibleElement(next)) return next;
+      next = next.nextElementSibling;
+    }
+
+    let parent = element.parentElement;
+    while (parent && parent !== document.body) {
+      if (isVisibleElement(parent)) return parent;
+      parent = parent.parentElement;
+    }
+
+    return null;
+  }
+
+  function findElementByHashes(hashes) {
+    for (const rawHash of hashes) {
+      if (!rawHash) continue;
+
+      const hash = rawHash.replace(/^#/, "");
+      const escapedHash = safeSelectorValue(hash);
+
+      const direct =
+        document.getElementById(hash) ||
+        document.querySelector(`[name="${escapedHash}"]`);
+
+      const usableDirect = getUsableElement(direct);
+      if (usableDirect) return usableDirect;
+
+      const attributeMatch = findElementByAttributeText(hash);
+      if (attributeMatch) return attributeMatch;
+    }
+
+    return null;
+  }
+
+  function findElementByAttributeText(keyword) {
+    const normalizedKeyword = keyword.toLowerCase();
+    const attributes = ["id", "name", "aria-label", "data-framer-name", "data-testid"];
+
+    const elements = Array.from(document.querySelectorAll("*"));
+
+    for (const element of elements) {
+      if (isInsideChat(element)) continue;
+
+      const hasMatch = attributes.some((attribute) => {
+        const value = element.getAttribute(attribute);
+        return value && value.toLowerCase().includes(normalizedKeyword);
+      });
+
+      if (hasMatch) {
+        const usable = getUsableElement(element);
+        if (usable) return usable;
+      }
+    }
+
+    return null;
+  }
+
+  function countKeywordMatches(text, keywords) {
+    return keywords.reduce((score, keyword) => {
+      return text.includes(keyword.toLowerCase()) ? score + 1 : score;
+    }, 0);
+  }
+
+  function getElementText(element) {
+    return (element.innerText || element.textContent || "")
+      .toLowerCase()
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function findSectionByKeywords(keywords, target) {
+    if (!keywords.length) return null;
+
+    const candidates = new Map();
     const walker = document.createTreeWalker(
       document.body,
       NodeFilter.SHOW_TEXT,
@@ -313,7 +482,8 @@
         acceptNode(node) {
           const text = node.textContent.toLowerCase().replace(/\s+/g, " ").trim();
           if (!text) return NodeFilter.FILTER_REJECT;
-          const hasKeyword = keywords.some((keyword) => text.includes(keyword));
+
+          const hasKeyword = keywords.some((keyword) => text.includes(keyword.toLowerCase()));
           return hasKeyword ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
         }
       }
@@ -322,42 +492,87 @@
     let current = walker.nextNode();
 
     while (current) {
-      const element = current.parentElement;
+      const baseElement = current.parentElement;
 
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.width > 0 && rect.height > 0) return element;
+      if (baseElement && !isInsideChat(baseElement)) {
+        const section = getHighlightTarget(baseElement, target);
+        const sectionText = getElementText(section);
+        const score = countKeywordMatches(sectionText, keywords);
+        const rect = section.getBoundingClientRect();
+        const area = Math.round(rect.width * rect.height);
+
+        if (score > 0 && rect.width > 100 && rect.height > 40) {
+          const existing = candidates.get(section);
+
+          if (!existing || score > existing.score || area > existing.area) {
+            candidates.set(section, {
+              element: section,
+              score,
+              area
+            });
+          }
+        }
       }
 
       current = walker.nextNode();
     }
 
-    return null;
+    const sorted = Array.from(candidates.values()).sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return b.area - a.area;
+    });
+
+    return sorted[0] ? sorted[0].element : null;
   }
 
-  function getHighlightTarget(element) {
-    let target = element;
+  function getHighlightTarget(element, target) {
+    let highlightTarget = getUsableElement(element) || element;
 
-    for (let i = 0; i < 5; i += 1) {
-      const parent = target.parentElement;
-      if (!parent || parent === document.body) break;
+    const maxHeightByTarget = {
+      projects: window.innerHeight * 2.3,
+      clients: window.innerHeight * 1.8,
+      blender: window.innerHeight * 1.8,
+      contact: window.innerHeight * 1.6,
+      projectDetail: window.innerHeight * 1.7
+    };
+
+    const maxHeight = maxHeightByTarget[target] || window.innerHeight * 1.6;
+    const minHeight = target === "projects" ? 150 : 80;
+
+    for (let i = 0; i < 7; i += 1) {
+      const parent = highlightTarget.parentElement;
+
+      if (!parent || parent === document.body || parent === document.documentElement) break;
+      if (isInsideChat(parent)) break;
 
       const rect = parent.getBoundingClientRect();
-      const isUsefulSize = rect.width > 260 && rect.height > 80 && rect.height < window.innerHeight * 1.5;
+      const currentRect = highlightTarget.getBoundingClientRect();
 
-      if (isUsefulSize) target = parent;
+      const parentIsUseful =
+        rect.width > 260 &&
+        rect.height >= minHeight &&
+        rect.height <= maxHeight;
+
+      const currentIsTooSmall =
+        currentRect.width < 260 ||
+        currentRect.height < minHeight;
+
+      if (parentIsUseful || currentIsTooSmall) {
+        highlightTarget = parent;
+      }
     }
 
-    return target;
+    return highlightTarget;
   }
 
   function highlightElement(element) {
-    const target = getHighlightTarget(element);
-    target.classList.add("ai-scroll-highlight");
+    if (!element) return;
+
+    element.classList.add("ai-scroll-highlight");
 
     window.setTimeout(() => {
-      target.classList.remove("ai-scroll-highlight");
-    }, 2600);
+      element.classList.remove("ai-scroll-highlight");
+    }, 2800);
   }
 
   function addMessage(role, text) {
