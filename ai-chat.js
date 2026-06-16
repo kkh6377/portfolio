@@ -4,8 +4,8 @@
   const suggestions = [
     "대표 프로젝트를 알려줘",
     "사용 가능한 기술 스택은?",
-    "채용 담당자 관점에서 요약해줘",
-    "VR 프로젝트 설명해줘",
+    "블렌더 갤러리를 보고싶어",
+    "깃허브 링크를 구경하고싶어",
     "연락 방법 알려줘"
   ];
 
@@ -116,6 +116,8 @@
     );
   }
 
+  scrollToSavedTarget();
+
   launcher.addEventListener("click", () => {
     chat.classList.toggle("open");
   });
@@ -157,8 +159,32 @@
     return path.replace(/\/$/, "") || "/";
   }
 
-  function getNavigationPath(question, answer) {
+  function getNavigationTarget(question, answer) {
     const text = `${question} ${answer}`.toLowerCase();
+
+    if (
+      text.includes("깃허브") ||
+      text.includes("github") ||
+      text.includes("git hub")
+    ) {
+      return {
+        type: "external",
+        url: "https://github.com/kkh6377"
+      };
+    }
+
+    if (
+      text.includes("블렌더") ||
+      text.includes("blender") ||
+      text.includes("갤러리") ||
+      text.includes("gallery")
+    ) {
+      return {
+        type: "internal",
+        path: "/about",
+        scrollTarget: "blender"
+      };
+    }
 
     if (
       text.includes("연락") ||
@@ -170,7 +196,25 @@
       text.includes("call") ||
       text.includes("text")
     ) {
-      return "/contact";
+      return {
+        type: "internal",
+        path: "/contact"
+      };
+    }
+
+    if (
+      text.includes("기술") ||
+      text.includes("스택") ||
+      text.includes("skill") ||
+      text.includes("clients") ||
+      text.includes("client") ||
+      text.includes("사용 가능한")
+    ) {
+      return {
+        type: "internal",
+        path: "/#clients",
+        scrollTarget: "clients"
+      };
     }
 
     if (
@@ -180,7 +224,10 @@
       text.includes("운전") ||
       text.includes("시뮬레이터")
     ) {
-      return "/work/vr";
+      return {
+        type: "internal",
+        path: "/work/vr"
+      };
     }
 
     if (
@@ -193,7 +240,10 @@
       text.includes("사막") ||
       text.includes("우주")
     ) {
-      return "/work/escaperoom-desert-space-theme-project";
+      return {
+        type: "internal",
+        path: "/work/escaperoom-desert-space-theme-project"
+      };
     }
 
     if (
@@ -203,7 +253,10 @@
       text.includes("뮤직비디오") ||
       text.includes("아이돌")
     ) {
-      return "/work/rivian";
+      return {
+        type: "internal",
+        path: "/work/rivian"
+      };
     }
 
     if (
@@ -213,44 +266,44 @@
       text.includes("슈팅") ||
       text.includes("좀비")
     ) {
-      return "/work/nothing";
+      return {
+        type: "internal",
+        path: "/work/nothing"
+      };
     }
 
     if (
+      text.includes("대표 프로젝트") ||
       text.includes("프로젝트") ||
       text.includes("project") ||
       text.includes("work") ||
       text.includes("작업물") ||
       text.includes("대표")
     ) {
-      return "/work";
+      return {
+        type: "internal",
+        path: "/work#all",
+        scrollTarget: "projects"
+      };
     }
 
     if (
-      text.includes("기술") ||
-      text.includes("스택") ||
-      text.includes("skill") ||
       text.includes("about") ||
       text.includes("소개") ||
       text.includes("자기소개") ||
       text.includes("채용") ||
       text.includes("개발자")
     ) {
-      return "/about";
+      return {
+        type: "internal",
+        path: "/about"
+      };
     }
 
     return null;
   }
 
-  function moveToRelatedPage(question, answer) {
-    const targetPath = getNavigationPath(question, answer);
-    if (!targetPath) return;
-
-    const currentPath = normalizePath(window.location.pathname);
-    const nextPath = normalizePath(targetPath);
-
-    if (currentPath === nextPath) return;
-
+  function saveConversation(question, answer) {
     sessionStorage.setItem(
       "aiChatLastConversation",
       JSON.stringify({
@@ -258,10 +311,108 @@
         answer
       })
     );
+  }
+
+  function moveToRelatedPage(question, answer) {
+    const target = getNavigationTarget(question, answer);
+    if (!target) return;
+
+    if (target.type === "external") {
+      window.setTimeout(() => {
+        window.location.href = target.url;
+      }, 1400);
+      return;
+    }
+
+    const targetPathOnly = target.path.split("#")[0] || "/";
+    const currentPath = normalizePath(window.location.pathname);
+    const nextPath = normalizePath(targetPathOnly);
+
+    if (target.scrollTarget) {
+      sessionStorage.setItem("aiChatScrollTarget", target.scrollTarget);
+    }
+
+    saveConversation(question, answer);
 
     window.setTimeout(() => {
-      window.location.href = targetPath;
+      if (currentPath === nextPath) {
+        scrollToSavedTarget();
+        return;
+      }
+
+      window.location.href = target.path;
     }, 1400);
+  }
+
+  function scrollToSavedTarget() {
+    const target = sessionStorage.getItem("aiChatScrollTarget");
+    if (!target) return;
+
+    sessionStorage.removeItem("aiChatScrollTarget");
+
+    const keywordMap = {
+      blender: ["a small look into my blender gallery", "blender gallery", "blender"],
+      clients: ["clients", "unreal", "adobe", "unity", "java", "blender", "python"],
+      projects: ["projects", "escaperoom", "vr drive simulator", "hi-five", "powerful shooting"]
+    };
+
+    const keywords = keywordMap[target] || [target];
+
+    let attempts = 0;
+    const timer = window.setInterval(() => {
+      attempts += 1;
+
+      const element = findElementByKeywords(keywords);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+        window.clearInterval(timer);
+        return;
+      }
+
+      if (attempts > 20) {
+        window.clearInterval(timer);
+      }
+    }, 250);
+  }
+
+  function findElementByKeywords(keywords) {
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_ELEMENT,
+      {
+        acceptNode(node) {
+          if (!node || !node.textContent) return NodeFilter.FILTER_REJECT;
+
+          const tagName = node.tagName ? node.tagName.toLowerCase() : "";
+          if (["script", "style", "svg"].includes(tagName)) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          const text = node.textContent.toLowerCase().replace(/\s+/g, " ").trim();
+          if (!text) return NodeFilter.FILTER_REJECT;
+
+          const hasKeyword = keywords.some((keyword) => text.includes(keyword));
+          return hasKeyword ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+        }
+      }
+    );
+
+    let current = walker.nextNode();
+
+    while (current) {
+      const rect = current.getBoundingClientRect();
+
+      if (rect.width > 0 && rect.height > 0) {
+        return current;
+      }
+
+      current = walker.nextNode();
+    }
+
+    return null;
   }
 
   function addMessage(role, text) {
